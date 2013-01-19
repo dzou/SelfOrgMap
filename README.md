@@ -9,7 +9,7 @@ The program then finds the pixel on the board with the closest color in RGB valu
 
 The learning process follows a simple equation:
 
-n(t - a)
+    n(t - a)
 
 where:
 
