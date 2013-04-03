@@ -3,11 +3,20 @@ package som;
 import java.awt.Color;
 import java.util.*;
 
+/**
+ * This class implements the SOM. It initializes a map with x rows
+ * and y cols with nodes that have random values. This class
+ * also contains methods that can be used to introduce an input
+ * node to the map.
+ */
+
 public class OrganizingMap {
+	/* Relevant constants */
 	private Pixel[][] array;
 	private final int radius = 200; 		// squared distance
 	private final double learningRate = 0.3;
 	
+	/* Constructor for random map */
 	public OrganizingMap(int x, int y) {
 		array = new Pixel[x][y];
 		for (int r = 0; r < array.length; r++) {
@@ -17,6 +26,7 @@ public class OrganizingMap {
 		}
 	}
 	
+	/* Constructor for solid color map */
 	public OrganizingMap(Color color, int x, int y) {
 		array = new Pixel[x][y];
 		for (int r = 0; r < array.length; r++) {

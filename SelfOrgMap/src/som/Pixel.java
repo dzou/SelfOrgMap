@@ -3,6 +3,11 @@ package som;
 import java.awt.Color;
 import java.util.*;
 
+/* Pixel refers to a node in the SOM. Each pixel/node has
+ * three values: red, blue, and green. These are used to
+ * determine the pixel's color.
+ */
+
 public class Pixel {
 	public int red, blue, green;
 	public Color color;

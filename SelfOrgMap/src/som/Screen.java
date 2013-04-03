@@ -7,8 +7,16 @@ import java.util.Set;
 
 import javax.swing.*;
 
+/* This screen initializes a SOM and also implements the
+ * click function. Each time the screen is clicked, a thread
+ * will spawn which will continuously introduce new nodes to the
+ * map.
+ */
+
 public class Screen extends JPanel {
 	
+	private static int ITER = 10000; // Refers to how many nodes will be
+								   // introduced per click
 	private OrganizingMap map;
 	
 	public Screen() {
@@ -24,7 +32,7 @@ public class Screen extends JPanel {
 	
 	private class MyThread extends Thread {
 		public void run() {
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < ITER; i++) {
 	    		Pixel input = new Pixel(0, 0);
 	    		Pixel match = map.findClosestMatch(input);
 	    		Set<Pixel> set = map.getNearbyPixels(match);
